@@ -1,6 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
+const env = require('dotenv').config()
 
 export default {
+  env: env.parsed,
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
@@ -50,6 +52,8 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/google-analytics',
   ],
   /*
    ** Nuxt.js modules
@@ -63,6 +67,16 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /*
+   ** google analytics module configuration
+   */
+  googleAnalytics: {
+    id: 'UA-174826341-1',
+    checkDuplicatedScript: true,
+    autoTracking: {
+      screenView: true,
+    }
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
