@@ -1,8 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
-const env = require('dotenv').config()
+// const env = require('dotenv').config()
 
 export default {
-  env: env.parsed,
+  env: {
+    BASE_URL: 'https://heroku-cockpit.herokuapp.com',
+    API_URL: 'api/collections',
+    API_TOKEN: '43cb872555477aecd4e35a98339f03',
+    COLLECTION_NAME: 'constructionSite',
+  },
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
@@ -75,7 +80,7 @@ export default {
     checkDuplicatedScript: true,
     autoTracking: {
       screenView: true,
-    }
+    },
   },
   /*
    ** vuetify module configuration
