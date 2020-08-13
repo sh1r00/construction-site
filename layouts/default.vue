@@ -8,12 +8,12 @@
               <v-img
                 width="200px"
                 height="130px"
-                :src="`${process.env.BASE_URL}${globals.header.logo.path}`"
+                :src="`${baseUrl}${globals.header.logo.path}`"
               />
               <v-img
                 width="200px"
                 height="70px"
-                :src="`${process.env.BASE_URL}${globals.header.bbb.path}`"
+                :src="`${baseUrl}${globals.header.bbb.path}`"
               />
             </v-col>
           </v-btn>
@@ -52,6 +52,9 @@ export default {
   },
   computed: {
     ...mapGetters(['globals']),
+    baseUrl() {
+      return process.env.BASE_URL
+    },
   },
   mounted() {
     this.$store.dispatch('getGlobals', 'globals')
