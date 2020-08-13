@@ -8,12 +8,12 @@
               <v-img
                 width="200px"
                 height="130px"
-                :src="`http://localhost/mysites/${globals.header.logo.path}`"
+                :src="`${process.env.BASE_URL}${globals.header.logo.path}`"
               />
               <v-img
                 width="200px"
                 height="70px"
-                :src="`http://localhost/mysites/${globals.header.bbb.path}`"
+                :src="`${process.env.BASE_URL}${globals.header.bbb.path}`"
               />
             </v-col>
           </v-btn>
